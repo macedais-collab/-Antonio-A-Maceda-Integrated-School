@@ -696,3 +696,101 @@ MOBILE IMPROVEMENTS (ADD-ON ONLY)
     }
 
 }
+
+  .about-video{
+    width:100%;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#videoOverlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(5px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.4s;
+    z-index:9999;
+
+}
+
+#videoOverlay.active{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+.video-popup{
+
+    width:80%;
+    max-width:900px;
+
+    animation:zoom .35s ease;
+
+}
+
+.video-popup video{
+
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+}
+
+.volume-buttons{
+
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+
+}
+
+.volume-buttons button{
+
+    padding:12px 25px;
+    border:none;
+    border-radius:50px;
+    background:#006b2d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+.volume-buttons button:hover{
+
+    background:#009944;
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.6);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}

@@ -155,11 +155,27 @@
 
 <section class="about" id="about">
 
-    <div class="about-image">
+    <div class="about-image" id="videoCard">
 
-        <img src="images/school-building.jpg" alt="School Building">
+    <video id="aboutVideo" class="about-video" muted loop playsinline>
+        <source src="images/about.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+<div id="videoOverlay">
+
+    <div class="video-popup">
+
+        <video id="popupVideo" controls playsinline>
+            <source src="images/about.mp4" type="video/mp4">
+        </video>
+
+        
 
     </div>
+
+</div>
 
     <div class="about-content">
 
@@ -170,7 +186,7 @@
         </p>
 
         <p>
-            We nurture academic excellence leadership discipline and good character while preparing every learner to become globally competitive and responsible citizens.
+            We nurture academic excellence, leadership, discipline, and good character while preparing every learner to become globally competitive and responsible citizens.
         </p>
 
         <a href="#programs" class="btn green">Explore Programs</a>
@@ -178,6 +194,7 @@
     </div>
 
 </section>
+
 
 <!-- ================= PROGRAMS ================= -->
 
@@ -320,6 +337,52 @@
     </p>
 
 </footer>
+
+<script>
+
+const card=document.getElementById("videoCard");
+
+const overlay=document.getElementById("videoOverlay");
+
+const popup=document.getElementById("popupVideo");
+
+const preview=document.getElementById("aboutVideo");
+
+card.onclick=()=>{
+
+overlay.classList.add("active");
+
+popup.play();
+
+}
+
+overlay.onclick=(e)=>{
+
+if(e.target===overlay){
+
+popup.pause();
+
+overlay.classList.remove("active");
+
+}
+
+}
+
+document.getElementById("lowVolume").onclick=()=>{
+
+popup.volume=.2;
+
+}
+
+document.getElementById("highVolume").onclick=()=>{
+
+popup.volume=1;
+
+}
+
+preview.play();
+
+</script>
 
 </body>
 </html>
