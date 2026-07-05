@@ -155,25 +155,19 @@
 
 <section class="about" id="about">
 
-    <div class="about-image" id="videoCard">
+    <div class="about-image">
 
-    <video id="aboutVideo" class="about-video" muted loop playsinline>
-        <source src="images/about.mp4" type="video/mp4">
-    </video>
+    <img src="images/teachers.jpg"
+         id="aboutImage"
+         alt="About Our School">
 
 </div>
 
-<div id="videoOverlay">
+<div id="imageOverlay" class="image-overlay">
 
-    <div class="video-popup">
-
-        <video id="popupVideo" controls playsinline>
-            <source src="images/about.mp4" type="video/mp4">
-        </video>
-
-        
-
-    </div>
+    <img src="images/teachers.jpg"
+         id="popupImage"
+         alt="About Our School">
 
 </div>
 
@@ -273,7 +267,7 @@
 
         <div class="news-card">
 
-            <h3>#Kindness Is Our Culture #Bullying Stops With Me!</h3>
+            <h3>Kindness Is Our Culture Bullying Stops With Me!</h3>
 
             <p>
                 Antonio A. Maceda Integrated School supports DepEd's campaign to
@@ -338,51 +332,6 @@
 
 </footer>
 
-<script>
-
-const card=document.getElementById("videoCard");
-
-const overlay=document.getElementById("videoOverlay");
-
-const popup=document.getElementById("popupVideo");
-
-const preview=document.getElementById("aboutVideo");
-
-card.onclick=()=>{
-
-overlay.classList.add("active");
-
-popup.play();
-
-}
-
-overlay.onclick=(e)=>{
-
-if(e.target===overlay){
-
-popup.pause();
-
-overlay.classList.remove("active");
-
-}
-
-}
-
-document.getElementById("lowVolume").onclick=()=>{
-
-popup.volume=.2;
-
-}
-
-document.getElementById("highVolume").onclick=()=>{
-
-popup.volume=1;
-
-}
-
-preview.play();
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
